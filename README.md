@@ -9,10 +9,14 @@ In vim:
 
     :call g:PearAdd("gabebw")
     :call g:PearAdd("ben")
+Now you're using ben's vimrc, since he was the last added.
 
 Every time you want to swap vimrc's, do this:
 
     :call g:PearSwap()
+
+PearShaped only stores 2 users at a time, so if you run `:call g:PearAdd("thirdWheel")`,
+you'll swap between ben and thirdWheel.
 
 ## WARNING
 
