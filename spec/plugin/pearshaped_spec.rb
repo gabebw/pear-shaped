@@ -17,7 +17,7 @@ describe 'pearshaped.vim' do
     end
 
     it 'resets all options to their defaults' do
-      vim.command 'set cursorcolumn'
+      vim.set 'cursorcolumn'
 
       vim.command 'PearShaped "gabe"'
 
@@ -34,6 +34,6 @@ describe 'pearshaped.vim' do
   end
 
   def set?(option)
-    vim.command('echo &cursorcolumn') == '1'
+    vim.echo('&cursorcolumn') == '1'
   end
 end
