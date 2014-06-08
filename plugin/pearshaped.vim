@@ -57,28 +57,7 @@ function! s:PearReset()
 endfunction
 
 " Add a user and source their vimrc
-function! g:PearAdd(name)
-  if !empty(g:pearshaped_current_user)
-    let g:pearshaped_previous_user = g:pearshaped_current_user
-  endif
-  let g:pearshaped_current_user = a:name
-
-  call s:PearSource()
-endfunction
-
-" Switch to the previous user's vimrc
-function! g:PearSwap()
-  if empty(g:pearshaped_previous_user)
-    if empty(g:pearshaped_current_user)
-      throw  "No users registered, must have 2 users"
-    else
-      throw  "Only 1 user registered, must have 2 users"
-    endif
-  else
-    let temp_previous_user         = g:pearshaped_previous_user
-    let g:pearshaped_previous_user = g:pearshaped_current_user
-    let g:pearshaped_current_user  = temp_previous_user
-
-    call s:PearSource()
-  endif
+function! g:PearShaped(name)
+  call s:ClearMappings()
+  call s:ResetOptionsToDefaults()
 endfunction
