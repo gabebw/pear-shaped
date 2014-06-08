@@ -11,7 +11,7 @@ describe 'pear_shaped.vim' do
     it 'clears all mappings' do
       vim.command 'nnoremap x :echo "Hello"'
 
-      vim.command 'PearShaped gabe'
+      vim.command 'PearShaped some_random_person'
 
       expect(vim).to have_no_mapping_from('x')
     end
@@ -19,7 +19,7 @@ describe 'pear_shaped.vim' do
     it 'resets all options to their defaults' do
       vim.set 'cursorcolumn'
 
-      vim.command 'PearShaped gabe'
+      vim.command 'PearShaped some_random_person'
 
       expect(set?('cursorcolumn')).to be false
     end
@@ -27,7 +27,7 @@ describe 'pear_shaped.vim' do
     it 'sources a vimrc' do
       use_custom_directory
 
-      vim.command 'PearShaped gabe'
+      vim.command 'PearShaped cursorcolumn_user'
 
       expect(set?('cursorcolumn')).to be true
     end
@@ -35,8 +35,8 @@ describe 'pear_shaped.vim' do
     it 'correctly sets options when going from one vimrc to another' do
       use_custom_directory
 
-      vim.command 'PearShaped gabe'
-      vim.command 'PearShaped expandtab'
+      vim.command 'PearShaped cursorcolumn_user'
+      vim.command 'PearShaped expandtab_user'
 
       expect(set?('cursorcolumn')).to be false
       expect(set?('expandtab')).to be true
