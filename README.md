@@ -64,7 +64,7 @@ If you want to put your configuration files somewhere other than
 `~/.pear_shaped`, you can change it:
 
 ```vim
-:let g:pear_shaped_directory = "~/.vim/pear_shaped"
+let g:pear_shaped_directory = "~/.vim/pear_shaped"
 ```
 
 ## Running the plugin's tests
