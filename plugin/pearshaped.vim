@@ -1,4 +1,3 @@
-
 if ! exists('g:pearshaped_directory')
   let g:pearshaped_directory = '~/.pearshaped'
 endif

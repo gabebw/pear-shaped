@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe 'pearshaped.vim' do
+  it 'sets g:pearshaped_directory to ~/.pearshaped by default' do
+    default_directory = vim.echo('g:pearshaped_directory')
+
+    expect(default_directory).to eq '~/.pearshaped'
+  end
+
   context 'when switching to a new user' do
     it 'clears all mappings' do
       vim.command 'nnoremap x :echo "Hello"'
