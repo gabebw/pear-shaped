@@ -25,16 +25,26 @@ describe 'pear_shaped.vim' do
     end
 
     it 'sources a vimrc' do
-      vim.command "let g:pear_shaped_directory = '#{ROOT}/spec/fixtures'"
+      use_custom_directory
 
       vim.command 'PearShaped gabe'
 
       expect(set?('cursorcolumn')).to be true
     end
+
+    it 'correctly sets options when going from one vimrc to another' do
+      use_custom_directory
+
+      vim.command 'PearShaped gabe'
+      vim.command 'PearShaped expandtab'
+
+      expect(set?('cursorcolumn')).to be false
+      expect(set?('expandtab')).to be true
+    end
   end
 
   def set?(option)
-    vim.echo('&cursorcolumn') == '1'
+    vim.echo("&#{option}") == '1'
   end
 
   def with_clean_vim
@@ -43,5 +53,9 @@ describe 'pear_shaped.vim' do
     yield(clean_vim)
   ensure
     clean_vim.kill
+  end
+
+  def use_custom_directory
+    vim.command "let g:pear_shaped_directory = '#{ROOT}/spec/fixtures'"
   end
 end
