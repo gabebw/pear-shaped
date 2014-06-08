@@ -6,7 +6,7 @@ Easily switch between your vim configuration and your pair's vim configuration.
 Let's say you're gabe, and you're pairing with ben.
 
 First, copy both of your dotfiles to `~/.pearshaped/gabe` and
-~/.pearshaped/ben`, respectively. Make sure there's a `vimrc` file in both
+`~/.pearshaped/ben`, respectively. Make sure there's a `vimrc` file in both
 directories, and that you can `:source` them.
 
 In vim:
