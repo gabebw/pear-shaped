@@ -43,10 +43,71 @@ describe 'pear_shaped.vim' do
     end
   end
 
+  context 'PearAdd' do
+    before do
+      use_custom_directory
+    end
+
+    it 'uses the most-recently-added vimrc' do
+      vim.command 'PearAdd cursorcolumn_user'
+      vim.command 'PearAdd expandtab_user'
+
+      expect(set?('expandtab')).to be true
+      expect(set?('cursorcolumn')).to be false
+    end
+  end
+
+  context 'PearSwap' do
+    context 'when switching between users' do
+      before do
+        use_custom_directory
+      end
+
+      it 'can swap between two users' do
+        vim.command 'PearAdd cursorcolumn_user'
+        vim.command 'PearAdd expandtab_user'
+
+        vim.command 'PearSwap'
+
+        expect(set?('expandtab')).to be false
+        expect(set?('cursorcolumn')).to be true
+      end
+    end
+  end
+
+  context 'PearClearUsers' do
+    before do
+      use_custom_directory
+    end
+
+    it 'keeps the current configuration' do
+      vim.command 'PearShaped cursorcolumn_user'
+
+      vim.command 'PearClearUsers'
+
+      expect(set?('cursorcolumn')).to be true
+    end
+
+    it 'allows adding two new users' do
+      vim.command 'PearAdd cursorcolumn_user'
+      vim.command 'PearAdd expandtab_user'
+
+      vim.command 'PearAdd undofile_user'
+
+      expect(set?('undofile')).to be false
+
+      vim.command 'PearClearUsers'
+
+      vim.command 'PearAdd cursorcolumn_user'
+      vim.command 'PearAdd undofile_user'
+
+      expect(set?('undofile')).to be true
+    end
+  end
+
   def set?(option)
     vim.echo("&#{option}") == '1'
   end
-
 
   def use_custom_directory
     vim.command "let g:pear_shaped_directory = '#{ROOT}/spec/fixtures'"

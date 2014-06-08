@@ -34,6 +34,22 @@ Now you're using ben's vim configuration. To switch back to gabe:
 
 Neat-o.
 
+## Let's Get Clever
+
+You can also add two users and swap between them. Let's say you have ben and
+gabe's `vimrc`s set up like above. Now you can do:
+
+```vim
+:PearAdd gabe
+:PearAdd ben
+```
+
+Since you added ben last, it's using his `vimrc`. Now you can do `:PearSwap` and
+you'll be back to using gabe's vimrc, then `:PearSwap` to go back to ben, etc.
+
+If you want to pair with someone else, call `:PearClearUsers` to clear the
+users and then `:PearAdd` the two new users.
+
 ## OK, what does it actually do?
 
 This plugin will, in order:
