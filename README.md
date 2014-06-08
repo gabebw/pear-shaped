@@ -1,4 +1,4 @@
-# It's all gone pear-shaped ![![Build Status](https://travis-ci.org/gabebw/vim-spec-runner.svg?branch=master)](https://travis-ci.org/gabebw/vim-spec-runner)
+# It's all gone pear-shaped [![Build Status](https://travis-ci.org/gabebw/pear-shaped.svg?branch=master)](https://travis-ci.org/gabebw/pear-shaped)
 
 Easily switch between your vim configuration and your pair's vim configuration.
 
