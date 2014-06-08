@@ -47,13 +47,6 @@ describe 'pear_shaped.vim' do
     vim.echo("&#{option}") == '1'
   end
 
-  def with_clean_vim
-    clean_vim = Vimrunner.start
-    clean_vim.add_plugin(File.join(ROOT, 'plugin'), 'spec-runner.vim')
-    yield(clean_vim)
-  ensure
-    clean_vim.kill
-  end
 
   def use_custom_directory
     vim.command "let g:pear_shaped_directory = '#{ROOT}/spec/fixtures'"
