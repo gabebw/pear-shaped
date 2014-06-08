@@ -2,6 +2,17 @@
 
 Easily switch between your vim configuration and your pair's vim configuration.
 
+## Install
+
+First, install [Vundle]. Then install this plugin:
+
+```vim
+Bundle "gabebw/pear_shaped"
+```
+
+
+[Vundle]: https://github.com/gmarik/Vundle.vim
+
 ## How to use
 Let's say you're gabe, and you're pairing with ben.
 
