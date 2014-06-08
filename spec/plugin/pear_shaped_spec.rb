@@ -24,7 +24,7 @@ describe 'pear_shaped.vim' do
       expect(set?('cursorcolumn')).to be false
     end
 
-    it 'sources a vimrc if it is available' do
+    it 'sources a vimrc' do
       vim.command "let g:pear_shaped_directory = '#{ROOT}/spec/fixtures'"
 
       vim.command 'PearShaped "gabe"'
