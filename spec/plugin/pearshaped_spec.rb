@@ -5,7 +5,7 @@ describe 'pearshaped.vim' do
     it 'clears all mappings' do
       vim.command 'nnoremap x :echo "Hello"'
 
-      vim.command 'call g:PearShaped("ben")'
+      vim.command 'PearShaped("ben")'
 
       expect(vim).to have_no_mapping_from('x')
     end
@@ -13,7 +13,7 @@ describe 'pearshaped.vim' do
     it 'resets all options to their defaults' do
       vim.command 'set cursorcolumn'
 
-      vim.command 'call g:PearShaped("ben")'
+      vim.command 'PearShaped("ben")'
 
       expect(vim.command('echo &cursorcolumn')).to eq '0'
     end

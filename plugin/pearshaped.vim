@@ -7,7 +7,9 @@ function! s:ResetOptionsToDefaults()
 endfunction
 
 " Add a user and source their vimrc
-function! g:PearShaped(name)
+function! s:PearShaped(name)
   call s:ClearMappings()
   call s:ResetOptionsToDefaults()
 endfunction
+
+command! -nargs=1 PearShaped call s:PearShaped(<f-args>)
