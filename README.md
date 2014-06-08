@@ -40,6 +40,14 @@ If you want to put your configuration files somewhere other than
 :let g:pearshaped_directory = "~/.vim/pearshaped"
 ```
 
+## Running the plugin's tests
+
+    rake
+
+If you get errors on OSX about `Vimrunner`, try installing MacVim then re-running the specs:
+
+    $ brew install macvim
+
 ### Author
 
 Gabe Berke-Williams, 2011-present. Fueled by azuki cream pastries, thai iced
