@@ -11,7 +11,7 @@ Vimrunner::RSpec.configure do |config|
   config.start_vim do
     vim = Vimrunner.start
 
-    vim.add_plugin(File.join(ROOT, 'plugin'), 'pearshaped.vim')
+    vim.add_plugin(File.join(ROOT, 'plugin'), 'pear_shaped.vim')
 
     vim
   end

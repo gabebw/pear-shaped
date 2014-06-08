@@ -5,8 +5,8 @@ Easily switch between your vim configuration and your pair's vim configuration.
 ## How to use
 Let's say you're gabe, and you're pairing with ben.
 
-First, copy both of your dotfiles to `~/.pearshaped/gabe` and
-`~/.pearshaped/ben`, respectively. Make sure there's a `vimrc` file in both
+First, copy both of your dotfiles to `~/.pear_shaped/gabe` and
+`~/.pear_shaped/ben`, respectively. Make sure there's a `vimrc` file in both
 directories, and that you can `:source` them.
 
 In vim:
@@ -34,10 +34,10 @@ This plugin will, in order:
 ## Configuration
 
 If you want to put your configuration files somewhere other than
-`~/.pearshaped`, you can change it:
+`~/.pear_shaped`, you can change it:
 
 ```vim
-:let g:pearshaped_directory = "~/.vim/pearshaped"
+:let g:pear_shaped_directory = "~/.vim/pear_shaped"
 ```
 
 ## Running the plugin's tests

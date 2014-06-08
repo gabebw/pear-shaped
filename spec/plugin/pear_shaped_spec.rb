@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'pearshaped.vim' do
-  it 'sets g:pearshaped_directory to ~/.pearshaped by default' do
-    default_directory = vim.echo('g:pearshaped_directory')
+describe 'pear_shaped.vim' do
+  it 'sets g:pear_shaped_directory to ~/.pear_shaped by default' do
+    default_directory = vim.echo('g:pear_shaped_directory')
 
-    expect(default_directory).to eq '~/.pearshaped'
+    expect(default_directory).to eq '~/.pear_shaped'
   end
 
   context 'when switching to a new user' do
@@ -25,7 +25,7 @@ describe 'pearshaped.vim' do
     end
 
     it 'sources a vimrc if it is available' do
-      vim.command "let g:pearshaped_directory = '#{ROOT}/spec/fixtures'"
+      vim.command "let g:pear_shaped_directory = '#{ROOT}/spec/fixtures'"
 
       vim.command 'PearShaped gabe'
 

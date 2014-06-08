@@ -1,5 +1,5 @@
-if ! exists('g:pearshaped_directory')
-  let g:pearshaped_directory = '~/.pearshaped'
+if ! exists('g:pear_shaped_directory')
+  let g:pear_shaped_directory = '~/.pear_shaped'
 endif
 
 function! s:ClearMappings()
@@ -11,7 +11,7 @@ function! s:ResetOptionsToDefaults()
 endfunction
 
 function! s:SourceVimrc(name)
-  let s:file = g:pearshaped_directory . '/' . a:name . "/vimrc"
+  let s:file = g:pear_shaped_directory . '/' . a:name . "/vimrc"
 
   execute "source " s:file
 endfunction
