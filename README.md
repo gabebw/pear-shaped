@@ -23,13 +23,13 @@ directories, and that you can `:source` them.
 In vim:
 
 ```vim
-:Pearshaped "ben"
+:Pearshaped ben
 ```
 
 Now you're using ben's vim configuration. To switch back to gabe:
 
 ```vim
-:Pearshaped "gabe"
+:Pearshaped gabe
 ```
 
 Neat-o.
