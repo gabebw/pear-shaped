@@ -1,28 +1,46 @@
 # It's all gone pear-shaped!
 
-## How to use
-Let's say you're gabebw, and you're pairing with ben. Do this:
+Easily switch between your vim configuration and your pair's vim configuration.
 
-Copy your vimrc's to "~/.pearshaped/gabebw-vimrc" and ~/.pearshaped/ben-vimrc".
+## How to use
+Let's say you're gabe, and you're pairing with ben.
+
+First, copy both of your dotfiles to `~/.pearshaped/gabe` and
+~/.pearshaped/ben`, respectively. Make sure there's a `vimrc` file in both
+directories, and that you can `:source` them.
 
 In vim:
 
-    :call g:PearAdd("gabebw")
-    :call g:PearAdd("ben")
-Now you're using ben's vimrc, since he was the last added.
+```vim
+:Pearshaped "ben"
+```
 
-Every time you want to swap vimrc's, do this:
+Now you're using ben's vim configuration. To switch back to gabe:
 
-    :call g:PearSwap()
+```vim
+:Pearshaped "gabe"
+```
 
-PearShaped only stores 2 users at a time, so if you run `:call g:PearAdd("thirdWheel")`,
-you'll swap between ben and thirdWheel.
+Neat-o.
 
-## WARNING
+## OK, what does it actually do?
 
-Fair warning: MVP, may break things, not every elegant, full of Vimscript.
+This plugin will, in order:
+
+* Clear all mappings
+* Reset every option (set with `:set`) back to its default
+* Source the desired vimrc
+
+## Configuration
+
+If you want to put your configuration files somewhere other than
+`~/.pearshaped`, you can change it:
+
+```vim
+:let g:pearshaped_directory = "~/.vim/pearshaped"
+```
 
 ### Author
 
-Gabe Berke-Williams, 2011. Fueled by azuki cream pastries, thai iced tea, and
-(regarding vimscript) loathing.
+Gabe Berke-Williams, 2011-present. Fueled by azuki cream pastries, thai iced
+tea, and (regarding vimscript) loathing.
